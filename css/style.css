@@ -1,0 +1,326 @@
+/* Custom Styles for Movie/Event Ticket Booking Application */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: bolder;
+    font-size: 2rem;
+    text-decoration: underline;
+    line-height: 1.2;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(1deg, #fcb502 70%, #f4f1f147 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hover-effect {
+    transition: all 0.4s ease;
+    opacity: 0.9;
+  }
+
+  .hover-effect:hover {
+    transform: scale(1.07);
+    opacity: 1;
+  }
+
+/* Event Cards */
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.event-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--success-color);
+}
+
+/* Seat Selection */
+.seat-map {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.screen {
+    background: linear-gradient(135deg, #eac766 0%, #9ca24b 100%);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.seat-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.row-label {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.seat {
+    width: 35px;
+    height: 35px;
+    margin: 2px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.seat.available {
+    background: #e8f5e8;
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.seat.selected {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.seat.booked {
+    background: var(--danger-color);
+    border-color: var(--danger-color);
+    color: white;
+    cursor: not-allowed;
+}
+
+.seat:hover:not(.booked) {
+    transform: scale(1.1);
+}
+
+/* Seat Legend */
+.seat-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-seat {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid;
+}
+
+/* Booking Summary */
+.booking-summary {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 2rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bounce-in {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Success Animation */
+.success-animation {
+    text-align: center;
+    padding: 3rem;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--success-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Booking Cards */
+.booking-card {
+    border-left: 4px solid var(--warning-color);
+    transition: all 0.3s ease;
+}
+
+.booking-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .seat-row {
+        flex-wrap: wrap;
+    }
+    
+    .seat {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+    
+    .booking-summary {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Alert Styles */
+.alert-custom {
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.btn-custom {
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

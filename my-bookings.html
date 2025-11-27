@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - TicketHub</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-ticket-alt me-2"></i>Ticket<span style="color: orange;">Hub</span>
+            </a>
+
+            <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav fw-bold mx-auto d-flex gap-4 fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><i class="fa-solid fa-house"></i><span
+                                style="color: orange;">
+                                Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html"><i class="fa-solid fa-calendar-plus"></i>
+                            <span style="color: orange;">Events</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html"><i class="fa-solid fa-id-card-clip"></i><span
+                                style="color: orange;"> Contact</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Contact_show.html"><i
+                                class="fa-solid fa-id-card-clip"></i><span style="color: orange;"> Contact show</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav fw-bold fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link position-relative active" href="my-bookings.html">
+                            <i class="fas fa-bookmark me-1"></i><span style="color: orange" ;">My
+                                Bookings</span>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger booking-count"
+                                style="display: none;">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main style="margin-top: 100px;">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-5 fw-bold mb-3 text-warning">My Bookings</h1>
+                        <p class="lead text-muted">Manage and view all your ticket bookings</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="events.html" class="btn btn-warning btn-custom">
+                            <i class="fas fa-plus me-2"></i>Book More Tickets
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bookings Section -->
+        <section class="py-5">
+            <div class="container">
+                <!-- Booking Statistics -->
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3">
+                        <div class="card text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="text-primary mb-2">
+                                    <i class="fas fa-ticket-alt fa-2x"></i>
+                                </div>
+                                <h4 class="card-title mb-1" id="total-bookings">0</h4>
+                                <p class="card-text text-muted">Total Bookings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="text-success mb-2">
+                                    <i class="fas fa-chair fa-2x"></i>
+                                </div>
+                                <h4 class="card-title mb-1" id="total-seats">0</h4>
+                                <p class="card-text text-muted">Total Seats</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="text-warning mb-2">
+                                    <i class="fas fa-dollar-sign fa-2x"></i>
+                                </div>
+                                <h4 class="card-title mb-1" id="total-spent">$0</h4>
+                                <p class="card-text text-muted">Total Spent</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="text-info mb-2">
+                                    <i class="fas fa-calendar-check fa-2x"></i>
+                                </div>
+                                <h4 class="card-title mb-1" id="upcoming-events">0</h4>
+                                <p class="card-text text-muted">Upcoming Events</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Options -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control" id="booking-search"
+                                placeholder="Search bookings...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="btn-group w-100" role="group">
+                            <input type="radio" class="btn-check" name="booking-filter" id="all-bookings" value="all"
+                                checked>
+                            <label class="btn btn-outline-warning fw-bold" for="all-bookings">All Bookings</label>
+
+                            <input type="radio" class="btn-check" name="booking-filter" id="upcoming-bookings"
+                                value="upcoming">
+                            <label class="btn btn-outline-warning fw-bold" for="upcoming-bookings">Upcoming</label>
+
+                            <input type="radio" class="btn-check" name="booking-filter" id="past-bookings" value="past">
+                            <label class="btn btn-outline-warning fw-bold" for="past-bookings">Past Events</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bookings Container -->
+                <div class="row" id="bookings-container">
+                    <!-- Bookings will be loaded here -->
+                </div>
+
+                <!-- Loading Spinner -->
+                <div class="text-center py-5 loading-spinner" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-3 text-muted">Loading your bookings...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-center mb-4">Quick Actions</h3>
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-md-3">
+                                <a href="events.html" class="btn btn-outline-primary btn-custom w-100 py-3">
+                                    <i class="fas fa-calendar-plus fa-2x mb-2 d-block"></i>
+                                    Book New Tickets
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-outline-success btn-custom w-100 py-3"
+                                    onclick="downloadBookings()">
+                                    <i class="fas fa-download fa-2x mb-2 d-block"></i>
+                                    Download Bookings
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-outline-danger btn-custom w-100 py-3"
+                                    onclick="clearAllBookings()">
+                                    <i class="fas fa-trash fa-2x mb-2 d-block"></i>
+                                    Clear All Bookings
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="contact.html" class="btn btn-outline-info btn-custom w-100 py-3">
+                                    <i class="fas fa-headset fa-2x mb-2 d-block"></i>
+                                    Contact Support
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-warning py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-ticket-alt me-2"></i>TicketHub
+                    </h5>
+                    <p class="text-muted">
+                        Your premier destination for booking movie tickets, concert passes, and theater shows.
+                        Experience entertainment like never before.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Events</a></li>
+                        <li><a href="my-bookings.html" class="text-muted text-decoration-none">My Bookings</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html" class="text-muted text-decoration-none">Movies</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Concerts</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Theater</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Sports</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <h6 class="mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-phone me-2"></i>+91 9151105889</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@tickethub.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Chitrakoot Uttar-Pradesh</li>
+                    </ul>
+
+                    <div class="mt-3">
+                        <a href="#" class="text-muted me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 TicketHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" id="privacyConfirm" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" id="termsConfirm" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Sweetaleart popup -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+
+    <!-- My Bookings specific JavaScript -->
+    <script>
+        $(document).ready(function () {
+            // Initialize booking statistics
+            updateBookingStatistics();
+
+            // Setup search functionality
+            $('#booking-search').on('input', function () {
+                const searchTerm = $(this).val().toLowerCase();
+                filterBookings(searchTerm);
+            });
+
+            // Setup filter functionality
+            $('input[name="booking-filter"]').on('change', function () {
+                const filterType = $(this).val();
+                filterBookingsByType(filterType);
+            });
+        });
+
+        // Update booking statistics
+        function updateBookingStatistics() {
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+
+            let totalSeats = 0;
+            let totalSpent = 0;
+            let upcomingEvents = 0;
+
+            const today = new Date();
+
+            bookings.forEach(booking => {
+                totalSeats += booking.seats.length;
+                totalSpent += booking.totalAmount;
+
+                // Check if event is upcoming (simplified check)
+                const eventDate = new Date(booking.eventDate);
+                if (eventDate >= today) {
+                    upcomingEvents++;
+                }
+            });
+
+            $('#total-bookings').text(bookings.length);
+            $('#total-seats').text(totalSeats);
+            $('#total-spent').text(`$${totalSpent}`);
+            $('#upcoming-events').text(upcomingEvents);
+        }
+
+        // Filter bookings by search term
+        function filterBookings(searchTerm) {
+            if (!searchTerm) {
+                $('.booking-card').parent().show();
+                return;
+            }
+
+            $('.booking-card').each(function () {
+                const title = $(this).find('.card-title').text().toLowerCase();
+                const bookingId = $(this).text().toLowerCase();
+
+                if (title.includes(searchTerm) || bookingId.includes(searchTerm)) {
+                    $(this).parent().show();
+                } else {
+                    $(this).parent().hide();
+                }
+            });
+        }
+
+        // Filter bookings by type
+        function filterBookingsByType(filterType) {
+            const today = new Date();
+
+            $('.booking-card').each(function () {
+                const bookingCard = $(this);
+                const eventDateText = bookingCard.find('.fa-calendar').parent().text().trim();
+
+                if (filterType === 'all') {
+                    bookingCard.parent().show();
+                } else if (filterType === 'upcoming') {
+                    // Show upcoming events (simplified logic)
+                    bookingCard.parent().show();
+                } else if (filterType === 'past') {
+                    // Show past events (simplified logic)
+                    bookingCard.parent().show();
+                }
+            });
+        }
+
+        // Download bookings as JSON
+        function downloadBookings() {
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+
+            if (bookings.length === 0) {
+                showAlert('No bookings to download.', 'warning');
+                return;
+            }
+
+            const dataStr = JSON.stringify(bookings, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'my-bookings.json';
+            link.click();
+
+            showAlert('Bookings downloaded successfully!', 'success');
+        }
+
+        // Clear all bookings
+        function clearAllBookings() {
+            Swal.fire({
+                title: "Clear All Bookings?",
+                text: "This action cannot be undone. All saved bookings will be permanently deleted.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, Clear All",
+                cancelButtonText: "Cancel",
+                confirmButtonColor: "#e74c3c",
+                cancelButtonColor: "#3085d6",
+                reverseButtons: true,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Remove all bookings
+                    localStorage.removeItem("bookings");
+                    updateBookingCount();
+                    updateBookingStatistics();
+                    displayMyBookings();
+                    showAlert("All bookings have been cleared.", "info");
+
+                    // Show success message after clearing
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "All bookings have been successfully cleared.",
+                        icon: "success",
+                        timer: 2000,
+                        showConfirmButton: false,
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Cancelled",
+                        text: "Your bookings are safe.",
+                        icon: "info",
+                        timer: 1500,
+                        showConfirmButton: false,
+                    });
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>

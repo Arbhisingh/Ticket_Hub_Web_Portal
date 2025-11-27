@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketHub - Movie & Event Booking</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Slider.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-ticket-alt me-2"></i>Ticket<span style="color: orange;">Hub</span>
+            </a>
+
+            <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav fw-bold mx-auto d-flex gap-4 fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><i class="fa-solid fa-house"></i><span
+                                style="color: orange;">
+                                Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html"><i class="fa-solid fa-calendar-plus"></i>
+                            <span style="color: orange;">Events</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html"><i class="fa-solid fa-id-card-clip"></i><span
+                                style="color: orange;"> Contact</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Contact_show.html"><i
+                                class="fa-solid fa-id-card-clip"></i><span style="color: orange;"> Contact show</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav fw-bold fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link position-relative active" href="my-bookings.html">
+                            <i class="fas fa-bookmark me-1"></i><span style="color: orange" ;">My
+                                Bookings</span>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger booking-count"
+                                style="display: none;">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+
+    <main>
+
+
+        <!-- Slider Section -->
+
+        <div id="carouselExample" class="carousel slide mt-5">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/S4.webp" class="d-block w-100" alt="..." height="550px">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/S1.webp" class="d-block w-100" alt="..." height="550px">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/S3.webp" class="d-block w-100" alt="..." height="550px">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/S2.webp" class="d-block w-100" alt="..." height="550px">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- one side image and content -->
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Left Side: Image -->
+                    <div class="col-md-6 text-center">
+                        <img src="images/nema_home.webp" alt="Now Screening" class="img-fluid rounded hover-effect">
+                    </div>
+
+                    <!-- Right Side: Content -->
+                    <div class="col-md-6">
+                        <h2 class="text-warning text-spacing fw-bold mb-2 fs-5"># NOWSCREENING</h2>
+                        <h3 class="fw-bold mb-3 fs-1" style="letter-spacing: 2px;">No More Antre,<br>Now More <span
+                                style="color: rgb(245, 143, 66);">Easy</span></h3>
+                        <p class="text-muted mb-4">
+                            TICKETHUB Screen is now on mobile! Discover latest movies, book your tickets,
+                            and enjoy exclusive in-app promos. <strong>Cinema is calling!</strong>
+                        </p>
+                        <a href="events.html" class="btn btn-warning fw-bold w-50 btn-lg rounded-pill px-4">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-4">Book Your Perfect Experience</h1>
+                        <p class="lead mb-4 text-muted">
+                            Discover amazing movies, concerts, theater shows, and events.
+                            Book your tickets easily with our interactive seat selection.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                            <a href="events.html" class="btn btn-light btn-lg btn-custom">
+                                <i class="fas fa-calendar-alt me-2"></i>Browse Events
+                            </a>
+                            <a href="#features" class="btn btn-outline-light btn-lg btn-custom">
+                                <i class="fas fa-info-circle me-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider Section-->
+        <div class="header mt-5">
+            <h1>Now Showing in Cinemas</h1>
+            <p class="subtitle">Epic Movie Trailers</p>
+        </div>
+
+        <div class="container">
+            <!-- Card Carousel with Images -->
+            <div class="carousel-wrapper">
+
+                <div class="card-carousel-container">
+                    <div class="card-carousel-track">
+                        <!-- Product 1 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/45/56/58/455658b83059f4657182ff6bb7a0e135.jpg"
+                                    alt="Headphones">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Wireless Headphones</h3>
+                                    <p class="card-description">Premium noise-cancelling headphones with exceptional
+                                        sound quality
+                                        and comfort.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$19.99</span>
+                                    <button class="card-button">
+                                        <a href="events.html" style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/1200x/a7/2e/e2/a72ee283575c98244ca7ce35af057514.jpg"
+                                    alt="Camera">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">DSLR Camera</h3>
+                                    <p class="card-description">Professional camera with 4K video recording and advanced
+                                        autofocus
+                                        system.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$89.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/37/73/79/377379ca4645c42fbb065f5a3b788f46.jpg"
+                                    alt="Smartwatch">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Smart Watch</h3>
+                                    <p class="card-description">Track your fitness, receive notifications, and more with
+                                        this
+                                        advanced smartwatch.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$24.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/88/04/94/880494a1e8fb31b9d9b07a29c2e8df61.jpg"
+                                    alt="Shoes">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Running Shoes</h3>
+                                    <p class="card-description">Lightweight running shoes with advanced cushioning for
+                                        maximum
+                                        comfort.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$129.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/c9/02/a0/c902a07b7b166e6b34e8085709a9629d.jpg"
+                                    alt="Backpack">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Travel Backpack</h3>
+                                    <p class="card-description">Durable and spacious backpack with laptop compartment
+                                        and multiple
+                                        pockets.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$79.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/b4/4e/76/b44e76e8206f6606d2c8743124540389.jpg"
+                                    alt="Laptop">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Gaming Laptop</h3>
+                                    <p class="card-description">High-performance laptop with dedicated graphics card for
+                                        gaming and
+                                        creative work.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$1499.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Duplicate items for seamless loop -->
+                        <!-- Product 1 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/6d/c6/61/6dc6617954cd7e9bffd1327045e67388.jpg"
+                                    alt="Headphones">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Wireless Headphones</h3>
+                                    <p class="card-description">Premium noise-cancelling headphones with exceptional
+                                        sound quality
+                                        and comfort.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$199.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/c6/ae/38/c6ae3865adc20d1f41d1b107d2b1fdfe.jpg"
+                                    alt="Camera">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">DSLR Camera</h3>
+                                    <p class="card-description">Professional camera with 4K video recording and advanced
+                                        autofocus
+                                        system.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$899.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/b9/cf/67/b9cf67beb8045001a5a18963bdebc5a0.jpg"
+                                    alt="Smartwatch">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Smart Watch</h3>
+                                    <p class="card-description">Track your fitness, receive notifications, and more with
+                                        this
+                                        advanced smartwatch.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$249.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/7d/19/41/7d19415d6aec0f4b5fc29c9f0575430b.jpg"
+                                    alt="Shoes">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Running Shoes</h3>
+                                    <p class="card-description">Lightweight running shoes with advanced cushioning for
+                                        maximum
+                                        comfort.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$129.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/32/e5/ca/32e5ca6a3792ee7e5ed7018d40ca782a.jpg"
+                                    alt="Backpack">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Travel Backpack</h3>
+                                    <p class="card-description">Durable and spacious backpack with laptop compartment
+                                        and multiple
+                                        pockets.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$79.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="card-carousel-item">
+                            <div class="card-image">
+                                <img src="https://i.pinimg.com/736x/7e/12/80/7e12802e2c9531e832e0454435fc348a.jpg"
+                                    alt="Laptop">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <h3 class="card-title">Gaming Laptop</h3>
+                                    <p class="card-description">High-performance laptop with dedicated graphics card for
+                                        gaming and
+                                        creative work.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">$1499.99</span>
+                                    <button class="card-button"><a href="events.html"
+                                            style="text-decoration: none; color: black;">Book
+                                            Now</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Carousel -->
+            <div class="carousel-wrapper">
+                <h2 class="carousel-title text-black fw-bold">Popular Web Series Collection</h2>
+                <div class="image-carousel-container">
+                    <div class="image-carousel-track">
+                        <!-- Destination 1 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/7f/01/a9/7f01a99a343526c823b04f087c46430a.jpg"
+                                alt="Beach">
+                            <div class="image-overlay">
+                                <h3>Tropical Beach</h3>
+                                <p>White sand and crystal clear water</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 2 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/27/71/65/277165c514a5a6d8ce39ed1e235a0f1d.jpg"
+                                alt="Mountains">
+                            <div class="image-overlay">
+                                <h3>Mountain Range</h3>
+                                <p>Breathtaking views and fresh air</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 3 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/1200x/78/e0/29/78e029b9bc8d53420df416d0ddaa8f64.jpg"
+                                alt="Forest">
+                            <div class="image-overlay">
+                                <h3>Enchanted Forest</h3>
+                                <p>Peaceful walks among ancient trees</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 4 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/2f/6c/74/2f6c745376fe03d434cad1c58e7c67f9.jpg"
+                                alt="Paris">
+                            <div class="image-overlay">
+                                <h3>Paris City</h3>
+                                <p>The city of lights and romance</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 5 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/3d/59/f8/3d59f8af1702271ba7e72c0f7898e70d.jpg"
+                                alt="Desert">
+                            <div class="image-overlay">
+                                <h3>Sandy Desert</h3>
+                                <p>Vast landscapes under the sun</p>
+                            </div>
+                        </div>
+
+                        <!-- Duplicate for seamless loop -->
+                        <!-- Destination 1 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/19/70/ce/1970ce284771f0815f85337e6826dba6.jpg"
+                                alt="Beach">
+                            <div class="image-overlay">
+                                <h3>Tropical Beach</h3>
+                                <p>White sand and crystal clear water</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 2 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/b0/86/f7/b086f7aadd6aa82d556349b3b9663a51.jpg"
+                                alt="Mountains">
+                            <div class="image-overlay">
+                                <h3>Mountain Range</h3>
+                                <p>Breathtaking views and fresh air</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 3 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/83/5c/f6/835cf6b2f737f6efdb044d716f21e662.jpg"
+                                alt="Forest">
+                            <div class="image-overlay">
+                                <h3>Enchanted Forest</h3>
+                                <p>Peaceful walks among ancient trees</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 4 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/1200x/13/11/a0/1311a000f4ce7ed1a71bf96b2f1211c8.jpg"
+                                alt="Paris">
+                            <div class="image-overlay">
+                                <h3>Paris City</h3>
+                                <p>The city of lights and romance</p>
+                            </div>
+                        </div>
+
+                        <!-- Destination 5 -->
+                        <div class="image-carousel-item">
+                            <img src="https://i.pinimg.com/736x/f0/df/c0/f0dfc0d8389370599e4daca0db8b1d59.jpg"
+                                alt="Desert">
+                            <div class="image-overlay">
+                                <h3>Sandy Desert</h3>
+                                <p>Vast landscapes under the sun</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Features Section -->
+        <section id="features" class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold mb-3">Why Choose TicketHub?</h2>
+                        <p class="lead text-muted">
+                            Experience the easiest way to book tickets for your favorite events
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center p-4">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="fas fa-mouse-pointer fa-2x"></i>
+                            </div>
+                            <h4>Interactive Seat Selection</h4>
+                            <p class="text-muted">Choose your perfect seats with our visual seat map interface</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center p-4">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="fas fa-bolt fa-2x"></i>
+                            </div>
+                            <h4>Instant Booking</h4>
+                            <p class="text-muted">Book your tickets instantly with real-time availability</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center p-4">
+                            <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="fas fa-mobile-alt fa-2x"></i>
+                            </div>
+                            <h4>Mobile Friendly</h4>
+                            <p class="text-muted">Book tickets on any device with our responsive design</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center p-4">
+                            <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="fas fa-shield-alt fa-2x"></i>
+                            </div>
+                            <h4>Secure & Safe</h4>
+                            <p class="text-muted">Your bookings are stored securely with confirmation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Events Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold mb-3">Popular Events</h2>
+                        <p class="lead text-muted">
+                            Don't miss out on these trending events
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4" id="popular-events">
+                    <!-- Popular events will be loaded here via JavaScript -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card event-card h-100">
+                            <img src="https://i.pinimg.com/736x/fd/73/b9/fd73b99b88c677932bce81289e623733.jpg"
+                                class="card-img-top" alt="Movie">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Latest Movies</h5>
+                                <p class="card-text">Experience the latest blockbusters in premium theaters</p>
+                                <div class="mt-auto">
+                                    <a href="events.html" class="btn btn-warning btn-custom w-100">Browse Movies</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card event-card h-100">
+                            <img src="https://i.pinimg.com/736x/d2/f7/92/d2f792677633126ee97cbfef3b000ff8.jpg"
+                                class="card-img-top" alt="Concert">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Live Concerts</h5>
+                                <p class="card-text">Enjoy live music from your favorite artists</p>
+                                <div class="mt-auto">
+                                    <a href="events.html" class="btn btn-warning btn-custom w-100">Browse Concerts</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card event-card h-100">
+                            <img src="https://i.pinimg.com/736x/50/a5/13/50a5139f940a1d2ed083c37326e4dfe8.jpg"
+                                class="card-img-top" alt="Theater">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Theater Shows</h5>
+                                <p class="card-text">Watch amazing theatrical performances and musicals</p>
+                                <div class="mt-auto">
+                                    <a href="events.html" class="btn btn-warning btn-custom w-100">Browse Shows</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold mb-3">How It Works</h2>
+                        <p class="lead text-muted">
+                            Book your tickets in just 3 simple steps
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="position-relative mb-4">
+                                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                                    style="width: 100px; height: 100px;">
+                                    <span class="fs-1 fw-bold">1</span>
+                                </div>
+                            </div>
+                            <h4>Browse Events</h4>
+                            <p class="text-muted">
+                                Explore our wide selection of movies, concerts, and theater shows
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="position-relative mb-4">
+                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                                    style="width: 100px; height: 100px;">
+                                    <span class="fs-1 fw-bold">2</span>
+                                </div>
+                            </div>
+                            <h4>Select Seats</h4>
+                            <p class="text-muted">
+                                Choose your preferred seats using our interactive seat map
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="position-relative mb-4">
+                                <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                                    style="width: 100px; height: 100px;">
+                                    <span class="fs-1 fw-bold">3</span>
+                                </div>
+                            </div>
+                            <h4>Confirm Booking</h4>
+                            <p class="text-muted">
+                                Complete your booking and receive instant confirmation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-5 bg-warning text-white">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold mb-3">Ready to Book Your Next Experience?</h2>
+                        <p class="lead mb-4 text-dark">
+                            Join thousands of satisfied customers who trust TicketHub for their entertainment needs
+                        </p>
+                        <a href="events.html" class="btn btn-light btn-lg btn-custom">
+                            <i class="fas fa-ticket-alt me-2"></i>Start Booking Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-white">
+            <div class="container-fluid m-0 p-0">
+                <div class="col-lg-12 mx-auto">
+                    <img src="images/newscreenfooter.webp" width="100%" alt="" class="img-fluid" style="height: 500px;">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-warning py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-ticket-alt me-2"></i>TicketHub
+                    </h5>
+                    <p class="text-muted">
+                        Your premier destination for booking movie tickets, concert passes, and theater shows.
+                        Experience entertainment like never before.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Events</a></li>
+                        <li><a href="my-bookings.html" class="text-muted text-decoration-none">My Bookings</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html" class="text-muted text-decoration-none">Movies</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Concerts</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Theater</a></li>
+                        <li><a href="events.html" class="text-muted text-decoration-none">Sports</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <h6 class="mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-phone me-2"></i>+91 9151105889</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@tickethub.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Chitrakoot Uttar-Pradesh</li>
+                    </ul>
+
+                    <div class="mt-3">
+                        <a href="#" class="text-muted me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <p class="text-muted mb-0">&copy; 2025 TicketHub. All rights reserved.</p>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <a href="Developer.html" class="text-decoration-none text-muted">Developed By : My Team</a>
+                </div>
+                <div class="col-md-5 text-md-end">
+                    <a href="#" id="privacyConfirm" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" id="termsConfirm" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Sweetaleart popup -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
